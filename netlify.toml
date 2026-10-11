@@ -1,0 +1,11 @@
+[build]
+command = "python3 -c \"import shutil; shutil.copyfile('evidence/proof.json', 'web/proof.json')\""
+publish = "web"
+
+[[headers]]
+for = "/*"
+[headers.values]
+X-Content-Type-Options = "nosniff"
+X-Frame-Options = "DENY"
+Referrer-Policy = "no-referrer"
+Cache-Control = "no-store"

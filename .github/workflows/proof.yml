@@ -1,0 +1,72 @@
+name: Reproducible security proof
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  security:
+    runs-on: ubuntu-24.04
+    services:
+      postgres:
+        image: postgres:17.11
+        env:
+          POSTGRES_PASSWORD: local-proof-only
+          POSTGRES_DB: guard_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - run: sudo apt-get update && sudo apt-get install -y gnucobol
+      - run: python -m pip install -r requirements.txt
+      - run: PYTHONPATH=. python tests/proof.py --output evidence/sqlite-ci.json
+      - run: PYTHONPATH=. python tests/proof.py --output evidence/postgres-ci.json
+        env:
+          TEST_DATABASE: postgresql://postgres:local-proof-only@localhost:5432/guard_test
+      - uses: actions/upload-artifact@v4
+        with:
+          name: security-proof
+          path: evidence/*-ci.json
+  kotlin:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - run: sudo apt-get update && sudo apt-get install -y kotlin
+      - run: python -m pip install -r requirements.txt
+      - run: PYTHONPATH=. python tests/proof.py --required-clients java,kotlin --output evidence/kotlin-ci.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kotlin-proof
+          path: evidence/kotlin-ci.json
+  swift:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: PYTHONPATH=. python tests/proof.py --required-clients swift --output evidence/swift-ci.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: swift-proof
+          path: evidence/swift-ci.json

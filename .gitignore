@@ -1,0 +1,12 @@
+.env
+.venv/
+.netlify/
+__pycache__/
+*.pyc
+*.db
+*.db-*
+*.pem
+*.key
+build/
+.build/
+node_modules/

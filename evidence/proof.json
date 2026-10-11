@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "generated_at_utc": "2026-10-11T01:56:35Z",
+  "python": "3.12.14",
+  "database": "sqlite",
+  "security_tests": 24,
+  "failures": 0,
+  "errors": 0,
+  "interop": {
+    "java": "signature-verified-and-origin-rejected",
+    "kotlin": "signature-verified-and-origin-rejected",
+    "swift": "not-executed",
+    "cobol": {
+      "valid_record": "ACCEPTED:c26650c3-21c6-4036-a21d-e0e1dec842f8:000000010000:BRL",
+      "invalid_records_rejected": 4
+    }
+  },
+  "settlement": "not-connected",
+  "audit": {
+    "events": 7,
+    "head": "ef4c627fc2cf36dab0fea12a2ea871a6242d81d96d511519ea9eb5083735704f"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "source_revision": "b99180964ee69162e3481f64b80c8beeaa2c1f1d",
+  "workflow_run_url": "https://github.com/brunnojob/ONLINE-transition-Cyber-Security/actions/runs/38103574564",
+  "jobs": [
+    {
+      "name": "kotlin",
+      "conclusion": "success",
+      "url": "https://github.com/brunnojob/ONLINE-transition-Cyber-Security/actions/runs/38103574564/job/114364302937"
+    },
+    {
+      "name": "swift",
+      "conclusion": "success",
+      "url": "https://github.com/brunnojob/ONLINE-transition-Cyber-Security/actions/runs/38103574564/job/114364303104"
+    },
+    {
+      "name": "security",
+      "conclusion": "success",
+      "url": "https://github.com/brunnojob/ONLINE-transition-Cyber-Security/actions/runs/38103574564/job/114364303131"
+    }
+  ],
+  "proofs": [
+    {
+      "schema": 1,
+      "generated_at_utc": "2026-10-11T01:58:23Z",
+      "python": "3.12.15",
+      "database": "sqlite",
+      "security_tests": 24,
+      "failures": 0,
+      "errors": 0,
+      "interop": {
+        "java": "signature-verified-and-origin-rejected",
+        "kotlin": "signature-verified-and-origin-rejected",
+        "swift": "not-executed",
+        "cobol": {
+          "valid_record": "ACCEPTED:88cb36ae-ecd7-42ed-adf0-af70dda807fd:000000010000:BRL",
+          "invalid_records_rejected": 4
+        }
+      },
+      "settlement": "not-connected",
+      "audit": {
+        "events": 7,
+        "head": "40d30d24e9330d83ee81021138c01695ca36206b716185e88b451da39e911879"
+      }
+    },
+    {
+      "schema": 1,
+      "generated_at_utc": "2026-10-11T01:58:37Z",
+      "python": "3.12.15",
+      "database": "postgresql",
+      "security_tests": 24,
+      "failures": 0,
+      "errors": 0,
+      "interop": {
+        "java": "signature-verified-and-origin-rejected",
+        "kotlin": "signature-verified-and-origin-rejected",
+        "swift": "not-executed",
+        "cobol": {
+          "valid_record": "ACCEPTED:bc3e1a0b-72d4-494d-bf99-0abad961093c:000000010000:BRL",
+          "invalid_records_rejected": 4
+        }
+      },
+      "settlement": "not-connected",
+      "audit": {
+        "events": 145,
+        "head": "80afa959806ffe6eaee6d455f879cd80f637c26f576384e3764835a9ebd947fc"
+      }
+    },
+    {
+      "schema": 1,
+      "generated_at_utc": "2026-10-11T01:58:10Z",
+      "python": "3.12.15",
+      "database": "sqlite",
+      "security_tests": 24,
+      "failures": 0,
+      "errors": 0,
+      "interop": {
+        "java": "signature-verified-and-origin-rejected",
+        "kotlin": "signature-verified-and-origin-rejected",
+        "swift": "not-executed",
+        "cobol": "not-executed"
+      },
+      "settlement": "not-connected",
+      "audit": {
+        "events": 7,
+        "head": "f62725c3b0ff2e5b4865fc37a900c7378e143083492c6cdd96750da38f8b69ba"
+      }
+    },
+    {
+      "schema": 1,
+      "generated_at_utc": "2026-10-11T01:58:02Z",
+      "python": "3.12.10",
+      "database": "sqlite",
+      "security_tests": 24,
+      "failures": 0,
+      "errors": 0,
+      "interop": {
+        "java": "signature-verified-and-origin-rejected",
+        "kotlin": "signature-verified-and-origin-rejected",
+        "swift": "signature-verified-and-origin-rejected",
+        "cobol": "not-executed"
+      },
+      "settlement": "not-connected",
+      "audit": {
+        "events": 10,
+        "head": "d8d23e0e0b61d650f9cfec9ecae32968f028e4b05b918b523f4bfdc87d392817"
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 [build]
-command = "python3 -c \"import shutil; shutil.copyfile('evidence/proof.json', 'web/proof.json')\""
+command = "python3 -c \"import shutil; shutil.copyfile('evidence/ci-summary.json', 'web/proof.json')\""
 publish = "web"
 
 [[headers]]

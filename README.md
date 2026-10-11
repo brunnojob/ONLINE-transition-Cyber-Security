@@ -97,9 +97,9 @@ Amounts are integer minor units, not floating point. Supported currencies: BRL, 
 
 ## Supabase and cloud
 
-Set GUARD_DATABASE to a protected PostgreSQL connection string from a dedicated Supabase project. The engine creates tables in the private `txguard` schema; [database/schema.sql](database/schema.sql) records the baseline. Database connections must be made by a trusted backend, never a mobile/browser client. RLS is enabled without client access policies. The schema owner bypasses RLS, so the backend's per-owner checks remain essential.
+Set GUARD_DATABASE to a protected PostgreSQL connection string from Supabase. Follow [the Windows and Supabase connection guide](docs/SUPABASE_SETUP.md) for download, installation, connection configuration and verification. The engine creates tables in the private `txguard` schema; [database/schema.sql](database/schema.sql) records the baseline. Database connections must be made by a trusted backend, never a mobile/browser client. RLS is enabled without client access policies. The schema owner bypasses RLS, so the backend's per-owner checks remain essential.
 
-No Supabase project was provisioned during the original local build because a dedicated organization and project allocation have not been selected. No production cloud deployment is claimed. Before connecting an existing project, review the schema, run database advisors and reproduce the PostgreSQL proof in a disposable environment. Keep txguard outside the Data API's exposed schemas and keep database credentials out of client applications.
+The operator selected an existing Supabase project during setup. Its live application connection has not yet been verified, and no production cloud deployment is claimed. Before connecting an existing project, review the schema and run database advisors. Reproduce the PostgreSQL proof only in a disposable environment, since its corruption test changes audit data. Keep txguard outside the Data API's exposed schemas and keep database credentials out of client applications.
 
 Netlify configuration in this repository publishes only a static evidence viewer. It does not host the Python authorization API or move money. For a public gateway, deploy the engine behind a maintained HTTPS application server and gateway with request limits and secret management.
 

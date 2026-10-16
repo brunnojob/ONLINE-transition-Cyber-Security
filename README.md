@@ -1,5 +1,9 @@
 # Transaction Guard
 
+[Open the interactive demo](https://transaction-guard-lab.vercel.app/) · [Demo scope and deployment](docs/DEMO.md)
+
+Run six scenarios in your browser against the original Python engine: valid authorization, signed amount or recipient mismatch, signature replay, expiry and concurrent dispatch. Each request creates an isolated temporary SQLite database and ephemeral server-side signing key, then returns the verified result and audit events. No registration, real credentials or money are involved.
+
 A transaction authorization gateway that blocks unauthorized local dispatch before a payment adapter receives an instruction. It binds authorization to the exact recipient, amount, currency, device, nonce, expiry and verifier origin. The project addresses transaction tampering, replay, cross-user access and duplicate dispatch races with executable controls and reproducible evidence.
 
 Developed by [brunnodev](https://brunnodev.store).

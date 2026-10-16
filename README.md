@@ -109,6 +109,4 @@ Read [docs/SECURITY.md](docs/SECURITY.md) for the precise attacker model and uni
 
 This release implements transaction authorization and local dispatch protection. It does not claim complete phishing resistance, malware detection, ransomware protection, fraud accuracy, PCI certification or bank integration. CLI signers currently use exportable private keys and have no trusted human confirmation interface. Mainframe delivery requires a mutually authenticated channel and a bank-specific adapter.
 
-## Attribution
 
-[brunnodev](https://brunnodev.store) owns the project. Requested co-authorship credits: [ineedfoundmyway](https://github.com/ineedfoundmyway) and [notalkonlyxtc](https://github.com/notalkonlyxtc), both verified repository collaborators. Collaborator status alone does not constitute a code review or security audit; no completed third-party audit is claimed.
